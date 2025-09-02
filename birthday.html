@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 5rem;
+      color: #fff;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+      animation: pop 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      top: -10px;
+      animation: fall 3s linear infinite;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday ❤️ 🎂</h1>
+
+  <script>
+    // Confetti generator
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = 
+        `hsl(${Math.random() * 360}, 70%, 60%)`;
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      confetti.style.width = confetti.style.height = Math.random()*8+5+"px";
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
