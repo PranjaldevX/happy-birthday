@@ -1,1 +1,1 @@
-Click on link  https://your-username.github.io/happy-birthday
+Click on link  https://pranjaldevx.github.io/happy-birthday
